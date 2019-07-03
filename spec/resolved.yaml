@@ -1,0 +1,33 @@
+components:
+  callbacks: {}
+  links: {}
+  requestBodies: {}
+  schemas: {}
+  securitySchemes: {}
+info:
+  contact:
+    email: bradley.belyeu@life.church
+    name: Brad Belyeu
+  description: You should definitely edit this YAML file to get all the tests passing.
+  termsOfService: ''
+  title: Tutorial for OpenAPI 3 + Connexion + AioHTTP
+  version: 1.0.0
+openapi: 3.0.2
+paths:
+  /:
+    get:
+      description: Basic getting started info
+      operationId: root.collection_get
+      responses:
+        '301':
+          description: This is a permanent redirect to the Github landing page & README.
+            This is primarily used just to have a default endpoint to test getting
+            the app running.
+      summary: Root path
+      x-openapi-router-controller: handlers
+security: []
+servers:
+- description: Local development
+  url: http://127.0.0.1:9000
+  variables: {}
+tags: []

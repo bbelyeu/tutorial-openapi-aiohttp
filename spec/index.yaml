@@ -1,0 +1,53 @@
+openapi: 3.0.2
+servers:
+  - url: 'http://127.0.0.1:9000'
+    description: Local development
+    variables: {}
+info:
+  description: You should definitely edit this YAML file to get all the tests passing.
+  version: 1.0.0
+  title: Tutorial for OpenAPI 3 + Connexion + AioHTTP
+  termsOfService: ''
+  contact:
+    email: bradley.belyeu@life.church
+    name: Brad Belyeu
+tags: []
+paths:
+  /:
+    get:
+      summary: Root path
+      description: Basic getting started info
+      x-openapi-router-controller: handlers
+      operationId: root.collection_get
+      responses:
+        '301':
+          description: >-
+            This is a permanent redirect to the Github landing page & README. This is primarily
+            used just to have a default endpoint to test getting the app running.
+components:
+  schemas:
+    Kudo:
+      properties:
+        id:
+          description: Unique identifier
+          format: int32
+          readOnly: true
+          type: integer
+        kudo:
+          description: Kudo text
+          type: string
+        created_dt:
+          description: This is the date when the kudo was first created.
+          format: date-time
+          readOnly: true
+          type: string
+        updated_dt:
+          description: This is the date when the kudo was last updated.
+          format: date-time
+          readOnly: true
+          type: string
+  requestBodies: {}
+  securitySchemes: {}
+  links: {}
+  callbacks: {}
+security: []

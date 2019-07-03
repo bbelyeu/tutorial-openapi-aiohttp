@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:10
+    container_name: tutorial_openapi_aiohttp_db
+    restart: always
+    environment:
+      POSTGRES_DB: tutorial_openapi_aiohttp
+      POSTGRES_USER: dev
+    ports:
+        - 5432:5432
