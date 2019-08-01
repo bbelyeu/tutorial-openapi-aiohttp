@@ -25,6 +25,15 @@ paths:
             the app running.
       summary: Root path
       x-openapi-router-controller: handlers
+  /hello-world:
+    get:
+      description: Do that Hello World thang
+      operationId: hello_world.collection_get
+      responses:
+        '200':
+          description: Just return Hello World
+      summary: Hello World endpoint
+      x-openapi-router-controller: handlers
 security: []
 servers:
 - description: Local development

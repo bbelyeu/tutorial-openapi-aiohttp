@@ -24,6 +24,15 @@ paths:
           description: >-
             This is a permanent redirect to the Github landing page & README. This is primarily
             used just to have a default endpoint to test getting the app running.
+  /hello-world:
+    get:
+      summary: Hello World endpoint
+      description: Do that Hello World thang
+      x-openapi-router-controller: handlers
+      operationId: hello_world.collection_get
+      responses:
+        '200':
+          description: Just return Hello World
 components:
   schemas:
     Kudo:
