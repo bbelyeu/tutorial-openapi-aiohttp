@@ -17,7 +17,7 @@ async def test_put(client):
     assert resp.status == 204
 
     text = await resp.text()
-    assert text == b''
+    assert text == ''
 
     async with app.app['db_conn'].acquire() as conn:
         async with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as db:
