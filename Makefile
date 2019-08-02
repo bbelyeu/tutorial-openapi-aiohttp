@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: clean deps docker docker-down docs flake8 githooks isort lint postgres psql pylint pycodestyle run spec test_1 test_2 test_3 test_4 tests validate-spec venv
+.PHONY: clean deps docker docker-down docs flake8 githooks isort lint postgres psql pylint pycodestyle run spec test_1 test_2 test_3 test_4 test_5 tests validate-spec
 
 .DEFAULT: help
 help:
@@ -38,12 +38,16 @@ help:
 	@echo "    Run the first test"
 	@echo "make test_2"
 	@echo "    Run the second test"
+	@echo "make test_3"
+	@echo "    Run the second test"
+	@echo "make test_4"
+	@echo "    Run the second test"
+	@echo "make test_5"
+	@echo "    Run the second test"
 	@echo "make tests"
 	@echo "    Run all the tests"
 	@echo "make validate-spec"
 	@echo "    Validate openapi spec"
-	@echo "make venv"
-	@echo "    Create & setup virtualenv and Python dependencies"
 
 build:
 	python setup.py sdist bdist_wheel
@@ -54,8 +58,7 @@ clean:
 	find . -name '__pycache__' -exec rm -Rf {} +
 
 deps:
-	pip-compile requirements.in
-	pip-sync requirements.txt
+	pip install -r requirements.txt
 
 docker: docker-up postgres
 
@@ -123,11 +126,11 @@ test_3:
 test_4:
 	pytest tests/test_4_kudo_get.py
 
+test_5:
+	pytest tests/test_5_kudo_put.py
+
 tests:
 	pytest tests/
 
 validate-spec:
 	prance validate spec/index.yaml
-
-venv:
-	source /usr/local/bin/virtualenvwrapper.sh && mkvirtualenv tutorial-openapi-aiohttp && workon tutorial-openapi-aiohttp && pip install --upgrade pip && pip install --upgrade pip-tools && pip-sync requirements.txt

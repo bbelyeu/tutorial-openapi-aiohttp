@@ -157,3 +157,15 @@ To get test 4 passing, you'll need to do the following:
         attributes pointing to your function.
     3. Add a 200 response and description. It should return a Kudo schema.
 * Add your function and test your code.
+
+### Test 5 - Kudo Resource - PUT method
+
+To get test 5 passing, you'll need to do the following:
+* Update index.yaml.
+    1. Update the `/kudos/{id}` route in index.yaml and add a PUT method. It should take a kudo
+        as input and return the Kudo schema.
+    2. Add a combination of `x-openapi-router-controller` (*optional*) and `operationId` (*required*)
+        attributes pointing to your function.
+    3. Add a 200 response and description. It should return a Kudo schema.
+* Add your function and test your code. *Note* make sure you update your `updated_dt` column with
+    a new timestamp when the object is updated.
