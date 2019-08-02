@@ -11,7 +11,7 @@ from tests import conftest
 async def test_post(client):
     """Test Kudos Collection POST method."""
     data = {'kudo': 'This is a really great test.'}
-    resp = await client.post(f'/kudos', json=data, headers={'Content-Type': 'application/json'})
+    resp = await client.post('/kudos', json=data, headers={'Content-Type': 'application/json'})
 
     assert resp.status == 201
     assert 'application/json' in resp.headers['Content-Type']

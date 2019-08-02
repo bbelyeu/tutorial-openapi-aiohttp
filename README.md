@@ -146,3 +146,14 @@ To get test 3 passing, you'll need to do the following:
 * The `kudo` resource returned should contain all the attributes listed in the `schema` of `index.yaml`.
 * After these changes, you can test your code. If you wish, you may use `make run` and hit your
     endpoint to see the results, or you can use the Makefile via `make test_3`.
+
+### Test 4 - Kudo Resource - GET method
+
+To get test 4 passing, you'll need to do the following:
+* Update index.yaml.
+    1. Add the `/kudos/{id}` route in index.yaml and add a GET method. It should return the Kudo
+        schema.
+    2. Add a combination of `x-openapi-router-controller` (*optional*) and `operationId` (*required*)
+        attributes pointing to your function.
+    3. Add a 200 response and description. It should return a Kudo schema.
+* Add your function and test your code.

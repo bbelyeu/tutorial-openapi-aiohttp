@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: clean deps docker docker-down docs flake8 githooks isort lint postgres psql pylint pycodestyle run spec test_1 test_2 tests validate-spec venv
+.PHONY: clean deps docker docker-down docs flake8 githooks isort lint postgres psql pylint pycodestyle run spec test_1 test_2 test_3 test_4 tests validate-spec venv
 
 .DEFAULT: help
 help:
@@ -119,6 +119,9 @@ test_2:
 
 test_3:
 	pytest tests/test_3_kudos_post.py
+
+test_4:
+	pytest tests/test_4_kudo_get.py
 
 tests:
 	pytest tests/
