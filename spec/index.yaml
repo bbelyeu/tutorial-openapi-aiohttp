@@ -79,6 +79,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Kudo'
+    put:
+      summary: Kudo resource read endpoint
+      description: Use this route to update a single kudo resource
+      parameters:
+        - $ref: '#/components/parameters/id'
+      x-openapi-router-controller: handlers
+      operationId: kudos.resource_put
+      responses:
+        '200':
+          description: This is a successful PUT update request on a single Kudo object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kudo'
 
 components:
 

@@ -43,3 +43,17 @@ async def resource_get(id, request):
 
     body = bytes(json.dumps(data, default=main.serialize), 'utf-8')
     return web.Response(body=body, headers={'Content-Type': 'application/json'})
+
+
+async def resource_put(id, request):
+    """Update a Kudo object by id."""
+    data = await request.json()
+
+    sql = 'update kudos set kudo = %(kudo)s, updated_dt = NOW() where id = %(id)s returning *;'
+    async with request.app['db_conn'].acquire() as conn:
+        async with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            await cur.execute(sql, {'id': id, 'kudo': data['kudo']})
+            data = await cur.fetchone()
+
+    body = bytes(json.dumps(data, default=main.serialize), 'utf-8')
+    return web.Response(body=body, headers={'Content-Type': 'application/json'})
