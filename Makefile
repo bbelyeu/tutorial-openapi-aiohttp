@@ -117,6 +117,9 @@ test_1:
 test_2:
 	pytest tests/test_2_kudos_get.py
 
+test_3:
+	pytest tests/test_3_kudos_post.py
+
 tests:
 	pytest tests/
 

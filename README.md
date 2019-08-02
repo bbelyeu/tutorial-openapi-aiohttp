@@ -121,11 +121,28 @@ To get test 2 passing, you'll need to do the following:
     2. Add a GET method to the route with a summary and description.
     3. Add a combination of `x-openapi-router-controller` (*optional*) and `operationId` (*required*)
         attributes pointing to your function.
-    4. Add a 200 response and description.
+    4. Add a 200 response and description. It should return a Kudo schema.
 * Create your new handler file & function. Remember to follow the
     [Google API Design Guide](https://cloud.google.com/apis/design/). *Note* You will run into
     an issue with Python's default `json.dumps` not being able to handle datetime objects. There
     are several clever workarounds, and it will be up to you to chose and implement one.
+* It should read the existing kudo in the database using the `db_conn` setup in `main.py`. This
+    is passed into the handler via the arg object which is an AioHTTP request class.
 * A `kudo` resource should contain all the attributes listed in the `schema` of `index.yaml`.
 * After these changes, you can test your code. If you wish, you may use `make run` and hit your
     endpoint to see the results, or you can use the Makefile via `make test_2`.
+
+### Test 3 - Kudos Collection - POST method
+
+To get test 3 passing, you'll need to do the following:
+* Update index.yaml.
+    1. Update the `/kudos` route in index.yaml and add a POST method. It should return the Kudo
+        schema.
+    2. Add a combination of `x-openapi-router-controller` (*optional*) and `operationId` (*required*)
+        attributes pointing to your function.
+    3. Add a 201 response and description. It should return a Kudo schema.
+* Add your function to process the POST method. It should use the `db_conn` setup in `main.py`
+    as in the previous step to save a new row to the database.
+* The `kudo` resource returned should contain all the attributes listed in the `schema` of `index.yaml`.
+* After these changes, you can test your code. If you wish, you may use `make run` and hit your
+    endpoint to see the results, or you can use the Makefile via `make test_3`.
