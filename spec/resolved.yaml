@@ -128,6 +128,22 @@ paths:
       summary: Kudos collection create endpoint
       x-openapi-router-controller: handlers
   /kudos/{id}:
+    delete:
+      description: Use this route to delete a single kudo resource
+      operationId: kudos.resource_delete
+      parameters:
+      - description: Kudo Id in the URL
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        '204':
+          description: This is a successful resource delete request
+      summary: Kudo resource delete endpoint
+      x-openapi-router-controller: handlers
     get:
       description: Use this route to get a single kudo resource
       operationId: kudos.resource_get

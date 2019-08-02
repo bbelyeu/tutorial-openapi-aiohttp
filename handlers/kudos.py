@@ -57,3 +57,13 @@ async def resource_put(id, request):
 
     body = bytes(json.dumps(data, default=main.serialize), 'utf-8')
     return web.Response(body=body, headers={'Content-Type': 'application/json'})
+
+
+async def resource_delete(id, request):
+    """Delete a Kudo object by id."""
+    sql = 'delete from kudos where id = %(id)s;'
+    async with request.app['db_conn'].acquire() as conn:
+        async with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            await cur.execute(sql, {'id': id})
+
+    return web.Response(body=b'', status=204)

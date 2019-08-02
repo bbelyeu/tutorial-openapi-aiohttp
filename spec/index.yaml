@@ -93,6 +93,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Kudo'
+    delete:
+      summary: Kudo resource delete endpoint
+      description: Use this route to delete a single kudo resource
+      parameters:
+        - $ref: '#/components/parameters/id'
+      x-openapi-router-controller: handlers
+      operationId: kudos.resource_delete
+      responses:
+        '204':
+          description: This is a successful resource delete request
 
 components:
 
