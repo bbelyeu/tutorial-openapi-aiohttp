@@ -88,6 +88,36 @@ paths:
           description: This is a successful GET request returning a list of Kudo object.
       summary: Kudos collection endpoint
       x-openapi-router-controller: handlers
+    post:
+      description: Use this route and POST to create a kudo
+      operationId: kudos.collection_post
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                properties:
+                  created_dt:
+                    description: This is the date when the kudo was first created.
+                    format: date-time
+                    readOnly: true
+                    type: string
+                  id:
+                    description: Unique identifier
+                    format: int32
+                    readOnly: true
+                    type: integer
+                  kudo:
+                    description: Kudo text
+                    type: string
+                  updated_dt:
+                    description: This is the date when the kudo was last updated.
+                    format: date-time
+                    readOnly: true
+                    type: string
+          description: Post a kudo and get the full kudo body back
+      summary: Kudos collection create endpoint
+      x-openapi-router-controller: handlers
 security: []
 servers:
 - description: Local development

@@ -17,3 +17,17 @@ async def collection_get(request):
 
     body = bytes(json.dumps(data, default=main.serialize), 'utf-8')
     return web.Response(body=body, headers={'Content-Type': 'application/json'})
+
+
+async def collection_post(request):
+    """Post a new kudo object and save to db."""
+    data = await request.json()
+
+    sql = 'insert into kudos (kudo) values (%(kudo)s) returning *;'
+    async with request.app['db_conn'].acquire() as conn:
+        async with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as db:
+            await db.execute(sql, data)
+            row = await db.fetchone()
+
+    body = bytes(json.dumps(row, default=main.serialize), 'utf-8')
+    return web.Response(body=body, status=201, headers={'Content-Type': 'application/json'})

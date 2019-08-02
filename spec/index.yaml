@@ -51,6 +51,18 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Kudo'
+    post:
+      summary: Kudos collection create endpoint
+      description: Use this route and POST to create a kudo
+      x-openapi-router-controller: handlers
+      operationId: kudos.collection_post
+      responses:
+        '201':
+          description: Post a kudo and get the full kudo body back
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kudo'
 
 components:
   schemas:
