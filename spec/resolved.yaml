@@ -2,7 +2,27 @@ components:
   callbacks: {}
   links: {}
   requestBodies: {}
-  schemas: {}
+  schemas:
+    Kudo:
+      properties:
+        created_dt:
+          description: This is the date when the kudo was first created.
+          format: date-time
+          readOnly: true
+          type: string
+        id:
+          description: Unique identifier
+          format: int32
+          readOnly: true
+          type: integer
+        kudo:
+          description: Kudo text
+          type: string
+        updated_dt:
+          description: This is the date when the kudo was last updated.
+          format: date-time
+          readOnly: true
+          type: string
   securitySchemes: {}
 info:
   contact:
@@ -33,6 +53,40 @@ paths:
         '200':
           description: Just return Hello World
       summary: Hello World endpoint
+      x-openapi-router-controller: handlers
+  /kudos:
+    get:
+      description: Use this route to get all kudos in a list
+      operationId: kudos.collection_get
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: Array of kudo objects.
+                items:
+                  properties:
+                    created_dt:
+                      description: This is the date when the kudo was first created.
+                      format: date-time
+                      readOnly: true
+                      type: string
+                    id:
+                      description: Unique identifier
+                      format: int32
+                      readOnly: true
+                      type: integer
+                    kudo:
+                      description: Kudo text
+                      type: string
+                    updated_dt:
+                      description: This is the date when the kudo was last updated.
+                      format: date-time
+                      readOnly: true
+                      type: string
+                type: array
+          description: This is a successful GET request returning a list of Kudo object.
+      summary: Kudos collection endpoint
       x-openapi-router-controller: handlers
 security: []
 servers:

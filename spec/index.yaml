@@ -12,6 +12,7 @@ info:
     email: bradley.belyeu@life.church
     name: Brad Belyeu
 tags: []
+
 paths:
   /:
     get:
@@ -33,6 +34,24 @@ paths:
       responses:
         '200':
           description: Just return Hello World
+
+  /kudos:
+    get:
+      summary: Kudos collection endpoint
+      description: Use this route to get all kudos in a list
+      x-openapi-router-controller: handlers
+      operationId: kudos.collection_get
+      responses:
+        '200':
+          description: This is a successful GET request returning a list of Kudo object.
+          content:
+            application/json:
+              schema:
+                description: Array of kudo objects.
+                type: array
+                items:
+                  $ref: '#/components/schemas/Kudo'
+
 components:
   schemas:
     Kudo:
