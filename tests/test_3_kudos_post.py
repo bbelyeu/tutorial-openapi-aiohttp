@@ -3,7 +3,6 @@ import datetime
 import json
 
 import psycopg2
-from dateutil.parser import parse
 
 import main
 from tests import conftest
@@ -33,5 +32,4 @@ async def test_post(client):
     assert row
     assert row['kudo'] == data['kudo']
     assert row['created_dt']
-    created_dt = parse(row['created_dt'])
-    assert isinstance(created_dt, datetime.datetime)
+    assert isinstance(row['created_dt'], datetime.datetime)
