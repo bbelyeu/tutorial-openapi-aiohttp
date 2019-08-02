@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: clean deps docker docker-down docs flake8 githooks isort lint postgres psql pylint pycodestyle run spec test_1 test_2 test_3 test_4 test_5 tests validate-spec
+.PHONY: clean deps docker docker-down docs flake8 githooks isort lint postgres psql pylint pycodestyle run spec test_1 test_2 test_3 test_4 test_5 test_6 tests validate-spec
 
 .DEFAULT: help
 help:
@@ -35,15 +35,17 @@ help:
 	@echo "make spec"
 	@echo "    Resolve specs into a single file"
 	@echo "make test_1"
-	@echo "    Run the first test"
+	@echo "    Run the hello world test"
 	@echo "make test_2"
-	@echo "    Run the second test"
+	@echo "    Run the collection get test"
 	@echo "make test_3"
-	@echo "    Run the second test"
+	@echo "    Run the collection post test"
 	@echo "make test_4"
-	@echo "    Run the second test"
+	@echo "    Run the resource get test"
 	@echo "make test_5"
-	@echo "    Run the second test"
+	@echo "    Run the resource put test"
+	@echo "make test_6"
+	@echo "    Run the resource delete test"
 	@echo "make tests"
 	@echo "    Run all the tests"
 	@echo "make validate-spec"
@@ -128,6 +130,9 @@ test_4:
 
 test_5:
 	pytest tests/test_5_kudo_put.py
+
+test_6:
+	pytest tests/test_6_kudo_delete.py
 
 tests:
 	pytest tests/

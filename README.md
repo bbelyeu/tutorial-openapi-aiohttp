@@ -169,3 +169,14 @@ To get test 5 passing, you'll need to do the following:
     3. Add a 200 response and description. It should return a Kudo schema.
 * Add your function and test your code. *Note* make sure you update your `updated_dt` column with
     a new timestamp when the object is updated.
+
+### Test 6 - Kudo Resource - DELETE method
+
+To get test 6 passing, you'll need to do the following:
+* Update index.yaml.
+    1. Update the `/kudos/{id}` route in index.yaml and add a DELETE method. It should return a
+        204 status and an empty body.
+    2. Add a combination of `x-openapi-router-controller` (*optional*) and `operationId` (*required*)
+        attributes pointing to your function.
+    3. Add a 204 response and description.
+* Add your function and test your code.
