@@ -31,3 +31,15 @@ async def collection_post(request):
 
     body = bytes(json.dumps(row, default=main.serialize), 'utf-8')
     return web.Response(body=body, status=201, headers={'Content-Type': 'application/json'})
+
+
+async def resource_get(id, request):
+    """Get a Kudo object by id."""
+    sql = 'select * from kudos where id = %(id)s;'
+    async with request.app['db_conn'].acquire() as conn:
+        async with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            await cur.execute(sql, {'id': id})
+            data = await cur.fetchone()
+
+    body = bytes(json.dumps(data, default=main.serialize), 'utf-8')
+    return web.Response(body=body, headers={'Content-Type': 'application/json'})

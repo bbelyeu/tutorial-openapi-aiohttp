@@ -1,6 +1,15 @@
 components:
   callbacks: {}
   links: {}
+  parameters:
+    id:
+      description: Kudo Id in the URL
+      in: path
+      name: id
+      required: true
+      schema:
+        format: int32
+        type: integer
   requestBodies: {}
   schemas:
     Kudo:
@@ -117,6 +126,45 @@ paths:
                     type: string
           description: Post a kudo and get the full kudo body back
       summary: Kudos collection create endpoint
+      x-openapi-router-controller: handlers
+  /kudos/{id}:
+    get:
+      description: Use this route to get a single kudo resource
+      operationId: kudos.resource_get
+      parameters:
+      - description: Kudo Id in the URL
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  created_dt:
+                    description: This is the date when the kudo was first created.
+                    format: date-time
+                    readOnly: true
+                    type: string
+                  id:
+                    description: Unique identifier
+                    format: int32
+                    readOnly: true
+                    type: integer
+                  kudo:
+                    description: Kudo text
+                    type: string
+                  updated_dt:
+                    description: This is the date when the kudo was last updated.
+                    format: date-time
+                    readOnly: true
+                    type: string
+          description: This is a successful GET request a single Kudo object.
+      summary: Kudo resource read endpoint
       x-openapi-router-controller: handlers
 security: []
 servers:

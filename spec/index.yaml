@@ -64,7 +64,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/Kudo'
 
+  /kudos/{id}:
+    get:
+      summary: Kudo resource read endpoint
+      description: Use this route to get a single kudo resource
+      parameters:
+        - $ref: '#/components/parameters/id'
+      x-openapi-router-controller: handlers
+      operationId: kudos.resource_get
+      responses:
+        '200':
+          description: This is a successful GET request a single Kudo object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Kudo'
+
 components:
+
+  parameters:
+    id:
+      name: id
+      description: Kudo Id in the URL
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+
   schemas:
     Kudo:
       properties:
