@@ -1,10 +1,7 @@
-aiobreaker
 aiodns
-aiohttp
-aiohttp_jinja2
 aiopg
 asynctest
-connexion[swagger-ui]
+connexion[aiohttp,swagger-ui]
 flake8
 isort[requirements]
 pdbpp
