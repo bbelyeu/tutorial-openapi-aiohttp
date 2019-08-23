@@ -6,7 +6,7 @@ flake8
 isort[requirements]
 pdbpp
 prance[osv,cli]
-psycopg2
+psycopg2-binary
 pudb
 pylint
 pytest

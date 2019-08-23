@@ -44,6 +44,10 @@ a virtual environment).
 Install the necessary [pip](https://pypi.org/project/pip/) packages listed in the
 `requirements.txt` file.
 
+> If you receive an error while install the requirements about not finding the pg_config file
+> you need to install a postgresql client before the psycopg2 install will work.
+> If you are on a Mac with Homebrew, running `brew install postgresql` should fix the issue.
+
 ### Running the AioHTTP server
 
 If you can get the AioHTTP server running, then you know your environment is setup correctly for

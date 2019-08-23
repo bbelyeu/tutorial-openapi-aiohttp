@@ -48,8 +48,7 @@ pip-api==0.0.11           # via isort
 pipreqs==0.4.9            # via isort
 pluggy==0.12.0            # via pytest
 prance[cli,osv]==0.15.0
-psycopg2-binary==2.8.3    # via aiopg
-psycopg2==2.8.3
+psycopg2-binary==2.8.3
 pudb==2019.1
 py==1.8.0                 # via pytest
 pycares==3.0.0            # via aiodns
