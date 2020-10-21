@@ -182,7 +182,6 @@ To get test 3 passing, you'll need to do the following:
 * The `kudo` resource returned should contain all the attributes listed in the `schema` of `index.yaml`.
 * After these changes, you can test your code. If you wish, you may use `make run` and hit your
     endpoint to see the results, or you can use the Makefile via `make test_3`.
-> You *should* be using `NOW()` in your SQL to set the `created_dt` for the Kudo.
 
 ### Test 4 - Kudo Resource - GET method
 
