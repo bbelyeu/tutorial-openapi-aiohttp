@@ -8,5 +8,6 @@ services:
     environment:
       POSTGRES_DB: tutorial_openapi_aiohttp
       POSTGRES_USER: dev
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
         - 5432:5432
