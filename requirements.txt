@@ -4,82 +4,203 @@
 #
 #    pip-compile
 #
---index-url https://yvapi:7TLMoxHM1ueN@pypi.thewardro.be/simple
---trusted-host pypi.thewardro.be
-
 aiodns==2.0.0
-aiohttp-jinja2==1.1.1     # via connexion
-aiohttp==3.5.1            # via aiohttp-jinja2, connexion, pytest-aiohttp
+    # via -r requirements.in
+aiohttp==3.5.1
+    # via
+    #   aiohttp-jinja2
+    #   connexion
+    #   pytest-aiohttp
+aiohttp-jinja2==1.1.1
+    # via connexion
 aiopg==0.16.0
-astroid==2.2.5            # via pylint
-async-timeout==3.0.1      # via aiohttp
+    # via -r requirements.in
+astroid==2.2.5
+    # via pylint
+async-timeout==3.0.1
+    # via aiohttp
 asynctest==0.13.0
-atomicwrites==1.3.0       # via pytest
-attrs==19.1.0             # via aiohttp, pytest
-certifi==2019.6.16        # via requests
-cffi==1.12.3              # via pycares
-chardet==3.0.4            # via aiohttp, prance, requests
-click==7.0                # via clickclick, flask, prance
-clickclick==1.2.2         # via connexion
+    # via -r requirements.in
+atomicwrites==1.3.0
+    # via pytest
+attrs==19.1.0
+    # via
+    #   aiohttp
+    #   pytest
+certifi==2022.12.7
+    # via requests
+cffi==1.12.3
+    # via pycares
+chardet==3.0.4
+    # via
+    #   aiohttp
+    #   prance
+    #   requests
+click==7.0
+    # via
+    #   clickclick
+    #   flask
+    #   prance
+clickclick==1.2.2
+    # via connexion
 connexion[aiohttp,swagger-ui]==2.3.0
-coverage==4.5.3           # via pytest-cov
-docopt==0.6.2             # via pipreqs
-entrypoints==0.3          # via flake8
-fancycompleter==0.8       # via pdbpp
+    # via -r requirements.in
+coverage==4.5.3
+    # via pytest-cov
+docopt==0.6.2
+    # via pipreqs
+entrypoints==0.3
+    # via flake8
+fancycompleter==0.8
+    # via pdbpp
 flake8==3.7.7
-flask==1.0.3              # via connexion
-idna==2.8                 # via requests, yarl
-importlib-metadata==0.18  # via pluggy, pytest
-inflection==0.3.1         # via connexion
-iniherit==0.3.9           # via yoyo-migrations
+    # via -r requirements.in
+flask==1.0.3
+    # via connexion
+idna==2.8
+    # via
+    #   requests
+    #   yarl
+importlib-metadata==0.18
+    # via
+    #   pluggy
+    #   pytest
+inflection==0.3.1
+    # via connexion
+iniherit==0.3.9
+    # via yoyo-migrations
 isort[requirements]==4.3.21
-itsdangerous==1.1.0       # via flask
-jinja2==2.10.1            # via aiohttp-jinja2, flask, swagger-ui-bundle
-jsonschema==2.6.0         # via connexion, openapi-spec-validator
-lazy-object-proxy==1.4.1  # via astroid
-markupsafe==1.1.1         # via jinja2
-mccabe==0.6.1             # via flake8, pylint
-more-itertools==7.1.0     # via pytest
-multidict==4.5.2          # via aiohttp, yarl
-openapi-spec-validator==0.2.7  # via connexion, prance
-packaging==19.0           # via pytest
+    # via
+    #   -r requirements.in
+    #   pylint
+itsdangerous==1.1.0
+    # via flask
+jinja2==2.10.1
+    # via
+    #   aiohttp-jinja2
+    #   flask
+    #   swagger-ui-bundle
+jsonschema==2.6.0
+    # via
+    #   connexion
+    #   openapi-spec-validator
+lazy-object-proxy==1.4.1
+    # via astroid
+markupsafe==1.1.1
+    # via jinja2
+mccabe==0.6.1
+    # via
+    #   flake8
+    #   pylint
+more-itertools==7.1.0
+    # via pytest
+multidict==4.5.2
+    # via
+    #   aiohttp
+    #   yarl
+openapi-spec-validator==0.2.7
+    # via
+    #   connexion
+    #   prance
+packaging==19.0
+    # via pytest
 pdbpp==0.10.0
-pip-api==0.0.11           # via isort
-pipreqs==0.4.9            # via isort
-pluggy==0.12.0            # via pytest
+    # via -r requirements.in
+pip-api==0.0.11
+    # via isort
+pipreqs==0.4.9
+    # via isort
+pluggy==0.12.0
+    # via pytest
 prance[cli,osv]==0.15.0
+    # via -r requirements.in
 psycopg2-binary==2.8.3
+    # via
+    #   -r requirements.in
+    #   aiopg
 pudb==2019.1
-py==1.8.0                 # via pytest
-pycares==3.0.0            # via aiodns
+    # via -r requirements.in
+py==1.8.0
+    # via pytest
+pycares==3.0.0
+    # via aiodns
 pycodestyle==2.5.0
-pycparser==2.19           # via cffi
-pyflakes==2.1.1           # via flake8
-pygments==2.4.2           # via pdbpp, pudb
+    # via
+    #   -r requirements.in
+    #   flake8
+pycparser==2.19
+    # via cffi
+pyflakes==2.1.1
+    # via flake8
+pygments==2.4.2
+    # via
+    #   pdbpp
+    #   pudb
 pylint==2.3.1
-pyparsing==2.4.0          # via packaging
-pytest-aiohttp==0.3.0
-pytest-cov==2.7.1
+    # via -r requirements.in
+pyparsing==2.4.0
+    # via packaging
 pytest==5.0.0
+    # via
+    #   -r requirements.in
+    #   pytest-aiohttp
+    #   pytest-cov
+pytest-aiohttp==0.3.0
+    # via -r requirements.in
+pytest-cov==2.7.1
+    # via -r requirements.in
 python-dateutil==2.8.0
-pyyaml==5.1.1             # via clickclick, connexion, openapi-spec-validator, prance
-requests==2.22.0          # via connexion, prance, yarg
-semver==2.8.1             # via prance
-six==1.12.0               # via astroid, connexion, iniherit, openapi-spec-validator, packaging, prance, python-dateutil
-swagger-ui-bundle==0.0.5  # via connexion
-text-unidecode==1.2       # via yoyo-migrations
-typed-ast==1.4.0          # via astroid
-urllib3==1.25.3           # via requests
-urwid==2.0.1              # via pudb
+    # via -r requirements.in
+pyyaml==5.1.1
+    # via
+    #   clickclick
+    #   connexion
+    #   openapi-spec-validator
+    #   prance
+requests==2.22.0
+    # via
+    #   connexion
+    #   prance
+    #   yarg
+semver==2.8.1
+    # via prance
+six==1.12.0
+    # via
+    #   astroid
+    #   connexion
+    #   iniherit
+    #   openapi-spec-validator
+    #   packaging
+    #   prance
+    #   python-dateutil
+swagger-ui-bundle==0.0.5
+    # via connexion
+text-unidecode==1.2
+    # via yoyo-migrations
+typed-ast==1.4.0
+    # via astroid
+urllib3==1.25.3
+    # via requests
+urwid==2.0.1
+    # via pudb
 uvloop==0.12.2
-wcwidth==0.1.7            # via pytest
-werkzeug==0.15.4          # via flask
-wmctrl==0.3               # via pdbpp
-wrapt==1.11.2             # via astroid
-yarg==0.1.9               # via pipreqs
-yarl==1.3.0               # via aiohttp
+    # via -r requirements.in
+wcwidth==0.1.7
+    # via pytest
+werkzeug==0.15.4
+    # via flask
+wmctrl==0.3
+    # via pdbpp
+wrapt==1.11.2
+    # via astroid
+yarg==0.1.9
+    # via pipreqs
+yarl==1.3.0
+    # via aiohttp
 yoyo-migrations==6.1.0
-zipp==0.5.1               # via importlib-metadata
+    # via -r requirements.in
+zipp==0.5.1
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
-# pip==19.2.2               # via pip-api
+# pip
